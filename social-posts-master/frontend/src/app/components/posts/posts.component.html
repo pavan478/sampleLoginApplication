@@ -1,0 +1,27 @@
+<div class="container">
+
+<div >
+<mat-card *ngFor="let post of posts$ | async">
+  <button *ngIf="post.user === userId" mat-icon-button>
+    <mat-icon (click)="delete(post.id)" color="warn">delete</mat-icon>
+  </button>
+  <div class="post-meta">
+    Name :
+    {{ post.name }}
+  </div>
+  <div class="post-meta">
+    Department : 
+    {{ post.department }}
+  </div>
+  <div class="post-meta">
+    Section: 
+    {{ post.section }}
+  </div>
+  <div class="post-meta">
+    Notes : 
+    {{ post.notes }}
+  </div>
+</mat-card>
+</div>
+<app-create-post (create)="createPost()"></app-create-post>
+</div>

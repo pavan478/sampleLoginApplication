@@ -1,0 +1,39 @@
+<!-- <button (click)="isOpen = !isOpen" mat-raised-button color="accent">
+  <mat-icon>add</mat-icon>Create post
+</button> -->
+<form
+  [formGroup]="form"
+  #formDirective="ngForm"
+  (ngSubmit)="onSubmit(form.value)"
+  novalidate
+  class="create-container"
+>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Department</mat-label>
+    <input matInput formControlName="department" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>section</mat-label>
+    <input matInput formControlName="section" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <input matInput formControlName="description" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Notes</mat-label>
+    <input matInput formControlName="notes" />
+  </mat-form-field>
+  <button
+    color="accent"
+    [disabled]="!form.valid"
+    mat-raised-button
+    type="submit"
+  >
+    <span>Add Student</span>
+  </button>
+</form>
